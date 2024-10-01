@@ -29,6 +29,7 @@ from .guild_member import *
 from .interaction import *
 from .invite import *
 from .message import *
+from .monetization import *
 from .oauth2 import *
 from .object import *
 from .presence import *
@@ -68,6 +69,7 @@ __all__: tuple[str, ...] = (
     'ContextComandData',
     'Embed',
     'Emoji',
+    'Entitlement',
     'File',
     'ForumTag',
     'Guild',
@@ -98,6 +100,7 @@ __all__: tuple[str, ...] = (
     'Reaction',
     'Role',
     'RoleSelectMenu',
+    'SKU',
     'ScheduledEvent',
     'SelectOption',
     'StageInstance',

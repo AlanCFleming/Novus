@@ -55,7 +55,6 @@ class APICache:
     def __init__(self, parent: HTTPConnection):
         self.parent = parent
         self.user: User | None = None
-        self.application_id: int | None = None
         self.application: Application | None = None
 
         self.guild_ids: set[int] = set()
@@ -82,6 +81,12 @@ class APICache:
     @staticmethod
     def do_nothing(instance: Any, *items: Any) -> None:
         pass
+
+    @property
+    def application_id(self) -> int | None:
+        if self.application:
+            return self.application.id
+        return None
 
     def add_guilds(self, *items: Guild) -> None:
         for i in items:
@@ -150,7 +155,6 @@ class APICache:
 
     def clear(self) -> None:
         self.user = None
-        self.application_id = None
         self.guilds.clear()
         self.users.clear()
         self.channels.clear()
